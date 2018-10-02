@@ -1,7 +1,7 @@
-FROM golang:1.9.2-alpine3.7
+FROM golang:1.11.0-alpine3.8
 
-ENV DEP_VERSION v0.3.2
-ENV GLIDE_VERSION v0.13.1
+ENV DEP_VERSION v0.5.0
+ENV GLIDE_VERSION v0.13.2
 
 WORKDIR /tmp/pkg
 

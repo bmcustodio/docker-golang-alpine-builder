@@ -6,10 +6,10 @@ An image meant to be used as a base for multi-stage builds.
 
 ## Current Software
 
-* Alpine 3.7
-* Go 1.9.2
-* `dep` 0.3.2
-* `glide` 0.13.1
+* Alpine 3.8
+* Go 1.11.0
+* `dep` 0.5.0
+* `glide` 0.13.2
 * `curl`, `git` and `make`
 
 ## Example
@@ -17,13 +17,13 @@ An image meant to be used as a base for multi-stage builds.
 [`bmcstdio/docker-multi-stage-builds`](https://github.com/bmcstdio/docker-multi-stage-builds) uses this image as its base:
 
 ```Dockerfile
-FROM quay.io/bmcstdio/golang-alpine-builder:1.0.0 AS builder
+FROM quay.io/bmcstdio/golang-alpine-builder:1.1.0 AS builder
 WORKDIR $GOPATH/src/github.com/bmcstdio/docker-multi-stage-builds
 COPY . .
 RUN dep ensure
 RUN go build -o /app ./main.go
 
-FROM alpine:3.7
+FROM alpine:3.8
 COPY --from=builder /app /app
 CMD ["/app"]
 ```
