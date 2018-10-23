@@ -7,7 +7,7 @@ An image meant to be used as a base for multi-stage builds.
 ## Current Software
 
 * Alpine 3.8
-* Go 1.11.0
+* Go 1.11.1
 * `dep` 0.5.0
 * `glide` 0.13.2
 * `curl`, `git` and `make`
